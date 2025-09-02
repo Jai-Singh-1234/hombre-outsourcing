@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Placement Services - Hombre Outsourcing</title>
+    <link rel="icon" type="image/png" href="images/logo.png " />
+    <meta
+      name="description"
+      content="Professional job placement services connecting skilled healthcare workers with employers across Punjab, Chandigarh, and Haryana."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#dc2626",
+              "primary-dark": "#b91c1c",
+              secondary: "#16a34a",
+              accent: "#16a34a",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header
+      class="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <!-- Made logo responsive and added link to index page -->
+              <a href="index.html" class="flex items-center">
+                <img
+                  src="images/logo.png"
+                  alt="Hombre Outsourcing Logo"
+                  class="h-12 w-12 mr-3"
+                />
+                <!-- Updated logo text size to match home/about pages -->
+                <h1 class="text-2xl font-bold text-primary">
+                  Hombre Outsourcing
+                </h1>
+              </a>
+            </div>
+          </div>
+
+          <nav class="hidden md:block">
+            <!-- Updated navbar links to use consistent styling like home/about pages -->
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a href="index.html" class="navbar-link" data-i18n="nav.home">Home</a>
+              <a href="about.html" class="navbar-link" data-i18n="nav.about">About</a>
+              <a href="services.html" class="navbar-link" data-i18n="nav.services">Services</a>
+              <a
+                href="job-placement.html"
+                class="navbar-link text-primary font-medium"
+                data-i18n="nav.job">Job Placement</a
+              >
+              <a href="blog.html" class="navbar-link" data-i18n="nav.blog">Blog</a>
+              <a href="contact.html" class="navbar-link" data-i18n="nav.contact">Contact</a>
+            </div>
+          </nav>
+
+          <div class="flex items-center space-x-2">
+            <!-- Language selector before theme toggle -->
+            <div class="hidden md:block">
+              <label class="sr-only" for="language-select">Language</label>
+              <select id="language-select" class="translate-select language-select" aria-label="Select language">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="pa">ਪੰਜਾਬੀ</option>
+              </select>
+            </div>
+            <!-- Updated theme toggle hover color to match other pages -->
+            <button
+              id="theme-toggle"
+              class="hidden md:block p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <svg
+                id="sun-icon"
+                class="w-5 h-5 hidden dark:block"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+              <svg
+                id="moon-icon"
+                class="w-5 h-5 block dark:hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="md:hidden">
+              <button
+                id="mobile-menu-button"
+                class="text-gray-600 dark:text-gray-300 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary p-2 rounded-md"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated mobile menu with theme toggle and improved spacing -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <div
+          class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+        >
+          <a href="index.html" class="mobile-navbar-link" data-i18n="nav.home">Home</a>
+          <a href="about.html" class="mobile-navbar-link" data-i18n="nav.about">About</a>
+          <a href="services.html" class="mobile-navbar-link" data-i18n="nav.services">Services</a>
+          <a
+            href="job-placement.html"
+            class="mobile-navbar-link text-primary font-medium"
+            data-i18n="nav.job">Job Placement</a
+          >
+          <a href="blog.html" class="mobile-navbar-link" data-i18n="nav.blog">Blog</a>
+          <a href="contact.html" class="mobile-navbar-link" data-i18n="nav.contact">Contact</a>
+          <!-- Updated mobile theme toggle styling -->
+          <div class="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+            <button
+              id="mobile-theme-toggle"
+              class="flex items-center w-full px-3 py-2 rounded-md text-base text-gray-600 dark:text-gray-300 hover:text-secondary transition-all duration-300"
+            >
+              <svg
+                id="mobile-sun-icon"
+                class="w-5 h-5 mr-3 hidden dark:block"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+              <svg
+                id="mobile-moon-icon"
+                class="w-5 h-5 mr-3 block dark:hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                ></path>
+              </svg>
+              <span class="dark:hidden">Dark Mode</span>
+              <span class="hidden dark:block">Light Mode</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="bg-gradient-to-br from-primary/20 to-accent/20 dark:from-primary/20 dark:to-accent/20 py-20"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1
+            class="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+          >
+            Job Placement Services
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Connecting skilled healthcare professionals with employers across
+            Punjab.
+          </p>
+        </div>
+      </section>
+
+      <!-- Job Placement Content -->
+      <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- For Job Seekers -->
+          <div class="mb-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2
+                  class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6"
+                >
+                  For Job Seekers
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                  Find your dream career in healthcare with our extensive
+                  network of employers. We specialize in placing qualified
+                  professionals in nursing, elderly care, and childcare
+                  positions.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Healthcare Positions
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Nursing, elderly care, childcare, and medical support
+                        roles
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Career Guidance
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Professional counseling and career development support
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Competitive Salaries
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Fair compensation packages with growth opportunities
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="images/4.png"
+                  alt="Job Seekers"
+                  class="rounded-lg shadow-2xl w-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- For Employers -->
+          <div class="mb-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div class="lg:order-2">
+                <h2
+                  class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6"
+                >
+                  For Employers
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                  Find qualified healthcare professionals for your organization.
+                  We provide pre-screened, experienced candidates who meet your
+                  specific requirements and standards.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Pre-Screened Candidates
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Background verified and skill-assessed professionals
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Quick Placement
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Fast turnaround time for urgent staffing needs
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Ongoing Support
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Continuous support for both employers and employees
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:order-1">
+                <img
+                  src="images/22.png"
+                  alt="Employers"
+                  class="rounded-lg shadow-2xl w-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Available Positions -->
+          <div class="mb-20">
+            <div class="text-center mb-12">
+              <h2
+                class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+              >
+                Available Positions
+              </h2>
+              <p class="text-xl text-gray-600 dark:text-gray-300">
+                Current job openings in healthcare sector
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                <h3
+                  class="text-xl font-semibold text-gray-900 dark:text-white mb-3"
+                >
+                  Registered Nurses
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                  Full-time and part-time positions available in hospitals and
+                  home care.
+                </p>
+                <div class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+                  <p>• Experience: 2+ years</p>
+                  <p>• Location: Punjab, Chandigarh</p>
+                  <p>• Salary: Competitive</p>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                <h3
+                  class="text-xl font-semibold text-gray-900 dark:text-white mb-3"
+                >
+                  Elderly Care Assistants
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                  Compassionate caregivers for senior living facilities and home
+                  care.
+                </p>
+                <div class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+                  <p>• Experience: 1+ years</p>
+                  <p>• Location: Haryana, Punjab</p>
+                  <p>• Salary: ₹15,000-25,000</p>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                <h3
+                  class="text-xl font-semibold text-gray-900 dark:text-white mb-3"
+                >
+                  Certified Babysitters
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                  Professional childcare providers for families and daycare
+                  centers.
+                </p>
+                <div class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+                  <p>• Experience: 6+ months</p>
+                  <p>• Location: Chandigarh, Punjab</p>
+                  <p>• Salary: ₹12,000-20,000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div
+            class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-12 text-center"
+          >
+            <h2
+              class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6"
+            >
+              Ready to Connect?
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              Whether you're looking for a job or need to hire, we're here to
+              help.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="contact.html"
+                class="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+              >
+                Contact US
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold text-primary mb-4">
+              Hombre Outsourcing
+            </h3>
+            <p class="text-gray-300 mb-4">
+              Professional healthcare and job placement services available 24x7.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-300 hover:text-primary">Facebook</a>
+              <a href="#" class="text-gray-300 hover:text-primary">Twitter</a>
+              <a href="#" class="text-gray-300 hover:text-primary">LinkedIn</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Services</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="services.html" class="hover:text-primary"
+                  >Nursing Care</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-primary"
+                  >Elderly Care</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-primary"
+                  >Baby Sitting</a
+                >
+              </li>
+              <li>
+                <a href="job-placement.html" class="hover:text-primary"
+                  >Job Placement</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="about.html" class="hover:text-primary">About Us</a>
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-primary">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Contact Info</h4>
+            <div class="space-y-2 text-gray-300">
+              <p>📞 +91 92165 06224, +91 79731 15604</p>
+              <p>📧 hombre.outsourcing@gmail.com</p>
+              <p>📍 Punjab</p>
+              <p class="text-primary font-semibold">Available 24x7</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300"
+        >
+          <p>
+            &copy; 2024 Hombre Outsourcing. All rights reserved. | Website
+            created by <span class="text-primary font-semibold">webifyX</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

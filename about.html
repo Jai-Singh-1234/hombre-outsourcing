@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Hombre Outsourcing</title>
+    <link rel="icon" type="image/png" href="images/logo.png " />
+    <meta
+      name="description"
+      content="Learn about Hombre Outsourcing - your trusted partner for healthcare services and job placement in Punjab, Chandigarh, and Haryana."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#dc2626",
+              "primary-dark": "#b91c1c",
+              secondary: "#16a34a",
+              accent: "#16a34a",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+  >
+    <!-- Header (same as index.html) -->
+    <header
+      class="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <!-- Made logo larger and added link to index page -->
+              <a href="index.html" class="flex items-center">
+                <img
+                  src="images/logo.png"
+                  alt="Hombre Outsourcing Logo"
+                  class="h-12 w-12 mr-3"
+                />
+                <h1 class="text-2xl font-bold text-primary">
+                  Hombre Outsourcing
+                </h1>
+              </a>
+            </div>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a href="index.html" class="navbar-link" data-i18n="nav.home">Home</a>
+              <a href="about.html" class="navbar-link text-primary font-medium" data-i18n="nav.about">About</a>
+              <a href="services.html" class="navbar-link" data-i18n="nav.services">Services</a>
+              <a href="job-placement.html" class="navbar-link" data-i18n="nav.job">Job Placement</a>
+              <a href="blog.html" class="navbar-link" data-i18n="nav.blog">Blog</a>
+              <a href="contact.html" class="navbar-link" data-i18n="nav.contact">Contact</a>
+            </div>
+          </nav>
+
+          <div class="flex items-center space-x-2">
+            <!-- Language Selector -->
+            <div class="hidden md:block">
+              <label class="sr-only" for="language-select">Language</label>
+              <select id="language-select" class="translate-select language-select" aria-label="Select language">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="pa">ਪੰਜਾਬੀ</option>
+              </select>
+            </div>
+
+            <!-- Theme Toggle - Hidden on mobile, moved to mobile menu -->
+            <button
+              id="theme-toggle"
+              class="hidden md:block p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <svg
+                id="sun-icon"
+                class="w-5 h-5 hidden dark:block"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+              <svg
+                id="moon-icon"
+                class="w-5 h-5 block dark:hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                ></path>
+              </svg>
+            </button>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+              <button
+                id="mobile-menu-button"
+                class="text-gray-600 dark:text-gray-300 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary p-2 rounded-md"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <div
+          class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+        >
+          <a href="index.html" class="mobile-navbar-link" data-i18n="nav.home">Home</a>
+          <a
+            href="about.html"
+            class="mobile-navbar-link text-primary font-medium"
+            data-i18n="nav.about">About</a
+          >
+          <a href="services.html" class="mobile-navbar-link" data-i18n="nav.services">Services</a>
+          <a href="job-placement.html" class="mobile-navbar-link" data-i18n="nav.job">Job Placement</a>
+          <a href="blog.html" class="mobile-navbar-link" data-i18n="nav.blog">Blog</a>
+          <a href="contact.html" class="mobile-navbar-link" data-i18n="nav.contact">Contact</a>
+          <!-- Added theme toggle to mobile menu -->
+          <div class="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+            <button
+              id="mobile-theme-toggle"
+              class="flex items-center w-full px-3 py-2 rounded-md text-base text-gray-600 dark:text-gray-300 hover:text-secondary transition-all duration-300"
+            >
+              <svg
+                id="mobile-sun-icon"
+                class="w-5 h-5 mr-3 hidden dark:block"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+              <svg
+                id="mobile-moon-icon"
+                class="w-5 h-5 mr-3 block dark:hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                ></path>
+              </svg>
+              <span class="dark:hidden">Dark Mode</span>
+              <span class="hidden dark:block">Light Mode</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="bg-gradient-to-br from-primary/20 to-accent/20 dark:from-primary/20 dark:to-accent/20 py-12 sm:py-20"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1
+            class="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6"
+          >
+            About Hombre Outsourcing
+          </h1>
+          <p
+            class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+          >
+            Your trusted partner for professional healthcare services and job
+            placement solutions across Punjab.
+          </p>
+        </div>
+      </section>
+
+      <!-- About Content -->
+      <section class="py-12 sm:py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 sm:mb-20"
+          >
+            <div>
+              <h2
+                class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6"
+              >
+                Our Story
+              </h2>
+              <p
+                class="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6"
+              >
+                Founded with a mission to provide exceptional healthcare
+                services and employment solutions, Hombre Outsourcing has been
+                serving families and businesses across Punjab.
+              </p>
+              <p
+                class="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6"
+              >
+                We understand that healthcare needs don't follow a schedule,
+                which is why we're available 24x7 to provide professional
+                nursing care, elderly support, and childcare services when you
+                need them most.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="tel:+919876543210"
+                  class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold text-center transition-colors"
+                >
+                  📞 Call Now
+                </a>
+                <a
+                  href="contact.html"
+                  class="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors text-center"
+                >
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+            <div>
+              <img
+                src="images/21.png"
+                alt="Healthcare Team"
+                class="rounded-lg shadow-2xl w-full"
+              />
+            </div>
+          </div>
+
+          <!-- Values Section -->
+          <div
+            class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-20"
+          >
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <svg
+                  class="w-8 h-8 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4"
+              >
+                Reliability
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                Count on us for consistent, dependable service whenever you need
+                it most.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <svg
+                  class="w-8 h-8 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4"
+              >
+                Compassion
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                Every service is delivered with genuine care and understanding
+                for your unique needs.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <svg
+                  class="w-8 h-8 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4"
+              >
+                Excellence
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                We maintain the highest standards in all our services and staff
+                qualifications.
+              </p>
+            </div>
+          </div>
+
+          <!-- Team Section -->
+          <div class="text-center">
+            <h2
+              class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6"
+            >
+              Why Choose Us?
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl sm:text-3xl font-bold text-primary mb-2">
+                  24x7
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Available round the clock
+                </p>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl sm:text-3xl font-bold text-primary mb-2">
+                  Certified
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Licensed professionals
+                </p>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl sm:text-3xl font-bold text-primary mb-2">
+                  Trusted
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Background verified staff
+                </p>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl sm:text-3xl font-bold text-primary mb-2">
+                  Local
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">Punjab</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="bg-gray-900 text-white py-8 sm:py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-bold text-primary mb-4">
+              Hombre Outsourcing
+            </h3>
+            <p class="text-gray-300 mb-4">
+              Professional healthcare and job placement services available 24x7.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-300 hover:text-primary">Facebook</a>
+              <a href="#" class="text-gray-300 hover:text-primary">Twitter</a>
+              <a href="#" class="text-gray-300 hover:text-primary">LinkedIn</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Services</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="services.html" class="hover:text-primary" data-i18n="footer.nursing">Nursing Care</a>
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-primary" data-i18n="footer.elderly">Elderly Care</a>
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-primary" data-i18n="footer.baby">Baby Sitting</a>
+              </li>
+              <li>
+                <a href="job-placement.html" class="hover:text-primary" data-i18n="footer.job">Job Placement</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="about.html" class="hover:text-primary" data-i18n="footer.about">About Us</a>
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-primary" data-i18n="footer.contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Contact Info</h4>
+            <div class="space-y-2 text-gray-300">
+              <p>📞 +91 92165 06224, +91 79731 15604</p>
+              <p>📧 hombre.outsourcing@gmail.com</p>
+              <p>📍 Punjab</p>
+              <p class="text-primary font-semibold">Available 24x7</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-300"
+        >
+          <p>
+            &copy; 2024 Hombre Outsourcing. All rights reserved. | Website
+            created by <span class="text-primary font-semibold">webifyX</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

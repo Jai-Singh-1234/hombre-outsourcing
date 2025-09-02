@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Hombre Outsourcing</title>
+    <link rel="icon" type="image/png" href="images/logo.png " />
+    <meta
+      name="description"
+      content="Contact Hombre Outsourcing for healthcare services and job placement. Available 24x7 in Punjab, Chandigarh, and Haryana."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#dc2626",
+              "primary-dark": "#b91c1c",
+              secondary: "#16a34a",
+              accent: "#16a34a",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header
+      class="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <!-- Made logo responsive and added link to index page -->
+              <a href="index.html" class="flex items-center">
+                <img
+                  src="images/logo.png"
+                  alt="Hombre Outsourcing Logo"
+                  class="h-12 w-12 mr-3"
+                />
+                <!-- Updated logo text size to match home/about pages -->
+                <h1 class="text-2xl font-bold text-primary">
+                  Hombre Outsourcing
+                </h1>
+              </a>
+            </div>
+          </div>
+
+          <nav class="hidden md:block">
+            <!-- Updated navbar links to use consistent styling like home/about pages -->
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a href="index.html" class="navbar-link" data-i18n="nav.home">Home</a>
+              <a href="about.html" class="navbar-link" data-i18n="nav.about">About</a>
+              <a href="services.html" class="navbar-link" data-i18n="nav.services">Services</a>
+              <a href="job-placement.html" class="navbar-link" data-i18n="nav.job">Job Placement</a>
+              <a href="blog.html" class="navbar-link" data-i18n="nav.blog">Blog</a>
+              <a
+                href="contact.html"
+                class="navbar-link text-primary font-medium"
+                data-i18n="nav.contact">Contact</a
+              >
+            </div>
+          </nav>
+
+          <div class="flex items-center space-x-2">
+            <!-- Language selector before theme toggle -->
+            <div class="hidden md:block">
+              <label class="sr-only" for="language-select">Language</label>
+              <select id="language-select" class="translate-select language-select" aria-label="Select language">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="pa">ਪੰਜਾਬੀ</option>
+              </select>
+            </div>
+            <!-- Updated theme toggle hover color to match other pages -->
+            <button
+              id="theme-toggle"
+              class="hidden md:block p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <svg
+                id="sun-icon"
+                class="w-5 h-5 hidden dark:block"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+              <svg
+                id="moon-icon"
+                class="w-5 h-5 block dark:hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="md:hidden">
+              <button
+                id="mobile-menu-button"
+                class="text-gray-600 dark:text-gray-300 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary p-2 rounded-md"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated mobile menu with theme toggle and improved spacing -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <div
+          class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+        >
+          <a href="index.html" class="mobile-navbar-link" data-i18n="nav.home">Home</a>
+          <a href="about.html" class="mobile-navbar-link" data-i18n="nav.about">About</a>
+          <a href="services.html" class="mobile-navbar-link" data-i18n="nav.services">Services</a>
+          <a href="job-placement.html" class="mobile-navbar-link"
+            data-i18n="nav.job">Job Placement</a
+          >
+          <a href="blog.html" class="mobile-navbar-link" data-i18n="nav.blog">Blog</a>
+          <a
+            href="contact.html"
+            class="mobile-navbar-link text-primary font-medium"
+            data-i18n="nav.contact">Contact</a
+          >
+          <!-- Updated mobile theme toggle styling -->
+          <div class="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+            <button
+              id="mobile-theme-toggle"
+              class="flex items-center w-full px-3 py-2 rounded-md text-base text-gray-600 dark:text-gray-300 hover:text-secondary transition-all duration-300"
+            >
+              <svg
+                id="mobile-sun-icon"
+                class="w-5 h-5 mr-3 hidden dark:block"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+              <svg
+                id="mobile-moon-icon"
+                class="w-5 h-5 mr-3 block dark:hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                ></path>
+              </svg>
+              <span class="dark:hidden">Dark Mode</span>
+              <span class="hidden dark:block">Light Mode</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="bg-gradient-to-br from-primary/20 to-accent/20 dark:from-primary/20 dark:to-accent/20 py-20"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1
+            class="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+          >
+            Contact Us
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Get in touch with us for healthcare services or job placement
+            assistance. We're available 24x7 to help you.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Content -->
+      <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                Send us a Message
+              </h2>
+              <form id="contact-form" class="space-y-6">
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  class="hidden"
+                  tabindex="-1"
+                  autocomplete="off"
+                  aria-hidden="true"
+                />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="New Contact Message from Hombre Outsourcing Website"
+                />
+                <input
+                  type="hidden"
+                  name="from_name"
+                  value="Hombre Outsourcing Website"
+                />
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      for="firstName"
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      >First Name</label
+                    >
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="lastName"
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      >Last Name</label
+                    >
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Phone Number</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="service"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Service Needed</label
+                  >
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                  >
+                    <option value="">Select request type</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="nursing-care">Nursing Care</option>
+                    <option value="elderly-care">Elderly Care</option>
+                    <option value="baby-sitting">Baby Sitting</option>
+                    <option value="job-placement">Job Placement</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    placeholder="Tell us about your requirements..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+                >
+                  Send Message
+                </button>
+              </form>
+
+              <!-- Success Message -->
+              <div
+                id="success-message"
+                role="status"
+                aria-live="polite"
+                class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-600 text-green-700 dark:text-green-300 rounded-lg"
+              >
+                Thank you for your message! We'll get back to you within 24
+                hours.
+              </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                Get in Touch
+              </h2>
+              <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                We're here to help you 24x7. Reach out to us through any of the
+                following methods:
+              </p>
+
+              <div class="space-y-6 mb-8">
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-6 h-6 text-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3
+                      class="font-semibold text-gray-900 dark:text-white mb-1"
+                    >
+                      Phone
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      +91 92165 06224, +91 79731 15604
+                    </p>
+                    <p class="text-sm text-primary">Available 24x7</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-6 h-6 text-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3
+                      class="font-semibold text-gray-900 dark:text-white mb-1"
+                    >
+                      Email
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      hombre.outsourcing@gmail.com
+                    </p>
+                    <p class="text-sm text-primary">Response within 24 hours</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-6 h-6 text-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3
+                      class="font-semibold text-gray-900 dark:text-white mb-1"
+                    >
+                      Service Areas
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">Punjab</p>
+                    <p class="text-sm text-primary">
+                      On-site services available
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Contact Buttons -->
+              <div class="space-y-4">
+                <a
+                  href="tel:+919876543210"
+                  class="w-full bg-primary hover:bg-primary-dark text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    ></path>
+                  </svg>
+                  <span>Call Now</span>
+                </a>
+
+                <a
+                  href="https://wa.me/917973115604"
+                  target="_blank"
+                  class="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"
+                    />
+                  </svg>
+                  <span>WhatsApp Chat</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold text-primary mb-4">
+              Hombre Outsourcing
+            </h3>
+            <p class="text-gray-300 mb-4">
+              Professional healthcare and job placement services available 24x7.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-300 hover:text-primary">Facebook</a>
+              <a href="#" class="text-gray-300 hover:text-primary">Twitter</a>
+              <a href="#" class="text-gray-300 hover:text-primary">LinkedIn</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Services</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="services.html" class="hover:text-primary"
+                  >Nursing Care</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-primary"
+                  >Elderly Care</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-primary"
+                  >Baby Sitting</a
+                >
+              </li>
+              <li>
+                <a href="job-placement.html" class="hover:text-primary"
+                  >Job Placement</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="about.html" class="hover:text-primary">About Us</a>
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-primary">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Contact Info</h4>
+            <div class="space-y-2 text-gray-300">
+              <p>📞 +91 92165 06224, +91 79731 15604</p>
+              <p>📧 hombre.outsourcing@gmail.com</p>
+              <p>📍 Punjab</p>
+              <p class="text-primary font-semibold">Available 24x7</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300"
+        >
+          <p>
+            &copy; 2024 Hombre Outsourcing. All rights reserved. | Website
+            created by <span class="text-primary font-semibold">webifyX</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      (function () {
+        const form = document.getElementById("contact-form");
+        if (!form) return;
+
+        const successEl = document.getElementById("success-message");
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        async function handleSubmit(e) {
+          e.preventDefault();
+
+          // Basic honeypot check
+          const botField = form.querySelector('[name="botcheck"]');
+          if (botField && botField.checked) {
+            return; // likely a bot, silently ignore
+          }
+
+          const formData = new FormData(form);
+          // Add your Web3Forms access key and helpful defaults
+          const payload = Object.fromEntries(formData.entries());
+          payload.access_key = "15368ae7-61eb-439c-ac16-e869aca5ce26";
+          // If your email field is named "email", Web3Forms uses it for Reply-To automatically.
+
+          // UI: disable button while sending
+          const originalLabel = submitBtn ? submitBtn.textContent : "";
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+            submitBtn.classList.add("opacity-70", "cursor-not-allowed");
+          }
+
+          try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify(payload),
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+              if (successEl) {
+                successEl.classList.remove("hidden");
+              }
+              form.reset();
+            } else {
+              // Show a simple error; you can make this fancier if you like
+              alert(data.message || "Something went wrong. Please try again.");
+            }
+          } catch (err) {
+            alert("Network error. Please check your connection and try again.");
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalLabel || "Send Message";
+              submitBtn.classList.remove("opacity-70", "cursor-not-allowed");
+            }
+          }
+        }
+
+        form.addEventListener("submit", handleSubmit);
+      })();
+    </script>
+  </body>
+</html>

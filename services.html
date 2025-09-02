@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services - Hombre Outsourcing</title>
+    <link rel="icon" type="image/png" href="images/logo.png " />
+    <meta
+      name="description"
+      content="Professional healthcare services including nursing care, elderly care, and baby sitting. Available 24x7 in Punjab, Chandigarh, and Haryana."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#dc2626",
+              "primary-dark": "#b91c1c",
+              secondary: "#16a34a",
+              accent: "#16a34a",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header
+      class="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <!-- Made logo larger and added link to index page -->
+              <a href="index.html" class="flex items-center">
+                <img
+                  src="images/logo.png"
+                  alt="Hombre Outsourcing Logo"
+                  class="h-12 w-12 mr-3"
+                />
+                <!-- Updated logo text size to match home/about pages -->
+                <h1 class="text-2xl font-bold text-primary">
+                  Hombre Outsourcing
+                </h1>
+              </a>
+            </div>
+          </div>
+
+          <nav class="hidden md:block">
+            <!-- Updated navbar links to use consistent styling like home/about pages -->
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a href="index.html" class="navbar-link" data-i18n="nav.home">Home</a>
+              <a href="about.html" class="navbar-link" data-i18n="nav.about">About</a>
+              <a
+                href="services.html"
+                class="navbar-link text-primary font-medium"
+                data-i18n="nav.services"
+                >Services</a
+              >
+              <a href="job-placement.html" class="navbar-link" data-i18n="nav.job">Job Placement</a>
+              <a href="blog.html" class="navbar-link" data-i18n="nav.blog">Blog</a>
+              <a href="contact.html" class="navbar-link" data-i18n="nav.contact">Contact</a>
+            </div>
+          </nav>
+
+          <div class="flex items-center space-x-2">
+            <!-- Language selector before theme toggle -->
+            <div class="hidden md:block">
+              <label class="sr-only" for="language-select">Language</label>
+              <select id="language-select" class="translate-select language-select" aria-label="Select language">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="pa">ਪੰਜਾਬੀ</option>
+              </select>
+            </div>
+            <!-- Updated theme toggle hover color to match other pages -->
+            <button
+              id="theme-toggle"
+              class="hidden md:block p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <svg
+                id="sun-icon"
+                class="w-5 h-5 hidden dark:block"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+              <svg
+                id="moon-icon"
+                class="w-5 h-5 block dark:hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="md:hidden">
+              <button
+                id="mobile-menu-button"
+                class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary p-2 rounded-md"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Updated mobile menu with theme toggle and improved spacing -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <div
+          class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+        >
+          <a href="index.html" class="mobile-navbar-link" data-i18n="nav.home">Home</a>
+          <a href="about.html" class="mobile-navbar-link" data-i18n="nav.about">About</a>
+          <a
+            href="services.html"
+            class="mobile-navbar-link text-primary font-medium"
+            data-i18n="nav.services"
+            >Services</a
+          >
+          <a href="job-placement.html" class="mobile-navbar-link" data-i18n="nav.job">Job Placement</a>
+          <a href="blog.html" class="mobile-navbar-link" data-i18n="nav.blog">Blog</a>
+          <a href="contact.html" class="mobile-navbar-link" data-i18n="nav.contact">Contact</a>
+          <!-- Language selector before theme toggle -->
+          <div class="mb-4">
+            <label class="sr-only" for="mobile-language-select">Language</label>
+            <select id="mobile-language-select" class="translate-select language-select w-full" aria-label="Select language">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+              <option value="pa">ਪੰਜਾਬੀ</option>
+            </select>
+          </div>
+          <!-- Updated mobile theme toggle styling -->
+          <div class="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+            <button
+              id="mobile-theme-toggle"
+              class="flex items-center w-full px-3 py-2 rounded-md text-base text-gray-600 dark:text-gray-300 hover:text-secondary transition-all duration-300"
+            >
+              <svg
+                id="mobile-sun-icon"
+                class="w-5 h-5 mr-3 hidden dark:block"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+              <svg
+                id="mobile-moon-icon"
+                class="w-5 h-5 mr-3 block dark:hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                ></path>
+              </svg>
+              <span class="dark:hidden">Dark Mode</span>
+              <span class="hidden dark:block">Light Mode</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="bg-gradient-to-br from-primary/20 to-accent/20 dark:from-primary/20 dark:to-accent/20 py-20"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1
+            class="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+          >
+            Our Services
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Comprehensive healthcare and support services available 24x7 across
+            Punjab.
+          </p>
+        </div>
+      </section>
+
+      <!-- Services Detail -->
+      <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Nursing Care -->
+          <div class="mb-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2
+                  class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6"
+                >
+                  Professional Nursing Care
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                  Our certified nursing professionals provide comprehensive
+                  medical care in the comfort of your home. From medication
+                  management to wound care, we ensure the highest standards of
+                  healthcare delivery.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        24x7 Availability
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Round-the-clock nursing care when you need it most
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Certified Professionals
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Licensed nurses with extensive healthcare experience
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Medical Equipment Support
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Assistance with medical devices and monitoring equipment
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="images/11.png"
+                  alt="Professional Nursing Care"
+                  class="rounded-lg shadow-2xl w-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Elderly Care -->
+          <div class="mb-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div class="lg:order-2">
+                <h2
+                  class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6"
+                >
+                  Compassionate Elderly Care
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                  Our elderly care services focus on maintaining dignity,
+                  independence, and quality of life for seniors. We provide
+                  personalized care that addresses both physical and emotional
+                  well-being.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Personal Care Assistance
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Help with daily activities, bathing, dressing, and
+                        grooming
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Companionship Services
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Social interaction, conversation, and emotional support
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Mobility Support
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Assistance with walking, transfers, and physical therapy
+                        exercises
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:order-1">
+                <img
+                  src="images/5.png"
+                  alt="Elderly Care Services"
+                  class="rounded-lg shadow-2xl w-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Baby Sitting -->
+          <div class="mb-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2
+                  class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6"
+                >
+                  Professional Baby Sitting
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                  Trust your little ones with our experienced and caring
+                  babysitters. All our childcare providers are
+                  background-verified and trained in child safety and
+                  development.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Background Verified Staff
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Thoroughly screened and trusted childcare providers
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Age-Appropriate Activities
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        Educational and fun activities tailored to your child's
+                        age
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <svg
+                      class="w-6 h-6 text-primary mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white">
+                        Emergency Care Trained
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300">
+                        First aid and CPR certified for child safety
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="images/2.png"
+                  alt="Professional Baby Sitting"
+                  class="rounded-lg shadow-2xl w-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div
+            class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-12 text-center"
+          >
+            <h2
+              class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6"
+            >
+              Ready to Get Started?
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              Contact us today for a free consultation and personalized care
+              plan.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="contact.html"
+                class="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+              >
+                Contact US
+              </a>
+              <a
+                href="https://wa.me/917973115604"
+                target="_blank"
+                class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+              >
+                💬 WhatsApp Chat
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold text-primary mb-4">
+              Hombre Outsourcing
+            </h3>
+            <p class="text-gray-300 mb-4">
+              Professional healthcare and job placement services available 24x7.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-300 hover:text-primary">Facebook</a>
+              <a href="#" class="text-gray-300 hover:text-primary">Twitter</a>
+              <a href="#" class="text-gray-300 hover:text-primary">LinkedIn</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Services</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="services.html" class="hover:text-primary"
+                  >Nursing Care</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-primary"
+                  >Elderly Care</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-primary"
+                  >Baby Sitting</a
+                >
+              </li>
+              <li>
+                <a href="job-placement.html" class="hover:text-primary"
+                  >Job Placement</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="about.html" class="hover:text-primary">About Us</a>
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-primary">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Contact Info</h4>
+            <div class="space-y-2 text-gray-300">
+              <p>📞 +91 92165 06224, +91 79731 15604</p>
+              <p>📧 hombre.outsourcing@gmail.com</p>
+              <p>📍 Punjab</p>
+              <p class="text-primary font-semibold">Available 24x7</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300"
+        >
+          <p>
+            &copy; 2024 Hombre Outsourcing. All rights reserved. | Website
+            created by <span class="text-primary font-semibold">webifyX</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
